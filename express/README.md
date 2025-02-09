@@ -17,7 +17,7 @@ This is a Node.js Express-based authentication service that provides a PIN-based
 Ensure you have the following installed on your system:
 
 - **Node.js** (>=14.x)
-- **npm** or **yarn**
+- **npm**
 
 ## Setup Instructions
 
@@ -44,6 +44,8 @@ BASE_WSO2_IAM_PROVIDER_URL=https://localhost:9443
 ```
 
 - `AUTH_MODE`: Defines whether the service operates as a **federated authenticator**, an authenticator for **internally managed users**, or a **second-factor authentication service**.
+  - If `AUTH_MODE` is `federated` or `internal`, the authenticator prompts for **username and PIN**.
+  - If `AUTH_MODE` is `second_factor`, the authenticator prompts for **PIN only**, using the user provided in the request from WSO2 Identity Server.
 - `BASE_WSO2_IAM_PROVIDER_URL`: Specifies the **host origin** of the running WSO2 Identity Server instance.
 
 ### 4️⃣ Add Users for Authentication
@@ -205,11 +207,3 @@ vercel --prod
 ## Contributing
 
 Contributions are welcome! Feel free to **fork** this repo and submit pull requests. 🚀
-
-
-
-
-
-
-
-
