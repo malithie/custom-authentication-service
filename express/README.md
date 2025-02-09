@@ -178,9 +178,38 @@ To deploy to **Vercel**, follow these steps:
 vercel --prod
 ```
 
-Ensure the necessary **environment variables** are configured in Vercel.
+### Vercel Configuration Steps
+
+1. **Set Environment Variables**:
+
+   - In Vercel, go to **Project Settings → Environment Variables**.
+   - Add `AUTH_MODE` with the preferred authenticator type (`federated`, `internal`, or `second_factor`).
+   - Add `USER_CONFIG` by converting the `users.json` file into a compact string:
+     ```bash
+     cat data/users.json | jq -c
+     ```
+     Copy and paste the output as the value for `USER_CONFIG` in Vercel.
+
+2. **Disable Vercel Authentication**:
+
+   - Go to **Project Settings → Deployment Protection**.
+   - Turn **off** Vercel Authentication to make the service publicly accessible.
+   - This step is required so that WSO2 Identity Server can access the authentication service.
+
+3. **Deploy to Vercel**:
+
+    ```bash
+    vercel --prod
+    ```
 
 ## Contributing
 
 Contributions are welcome! Feel free to **fork** this repo and submit pull requests. 🚀
+
+
+
+
+
+
+
 
