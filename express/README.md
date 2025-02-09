@@ -44,7 +44,7 @@ BASE_WSO2_IAM_PROVIDER_URL=https://localhost:9443
 
 - `AUTH_MODE`: Defines whether the service operates as a **federated authenticator**, an authenticator for **internally managed users**, or a **second-factor authentication service**.
   - If `AUTH_MODE` is `federated` or `internal`, the authenticator prompts for **username and PIN**.
-  - If `AUTH_MODE` is `second_factor`, the authenticator prompts for **PIN only**, using the user provided in the request from WSO2 Identity Server.
+  - If `AUTH_MODE` is `second_factor`, the authenticator prompts for **PIN only**, and authenticates the user provided in the request from WSO2 Identity Server with PIN.
 - `BASE_WSO2_IAM_PROVIDER_URL`: Specifies the **host origin** of the running WSO2 Identity Server instance.
 
 ### 4️⃣ Add Users for Authentication
@@ -90,11 +90,12 @@ Create a `users.json` file inside the `data/` directory with the following struc
 
 - **Internal users**: Ensure the `id` and `username` fields match the user definitions in **Identity Server**.
 - **Federated users**: External users that **do not** need to be pre-registered in Identity Server.
+- To authenticate, use the username and PIN specified in this file to ensure successful authentication.
 
 ### 5️⃣ Run the Service Locally
 
 ```bash
-npm start
+node api/index.js
 ```
 
 The service will be available at: **[http://localhost:3000](http://localhost:3000)**
