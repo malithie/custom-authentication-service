@@ -1,1 +1,38 @@
-# custom-authentication-service
+# Custom Authentication Service
+
+This repository contains a **custom authentication service** designed to work with WSO2 Identity Server. It provides **PIN-based authentication** and can be used for **federated authentication, internal user authentication, or second-factor authentication**.
+
+## 📂 Project Structure
+
+```
+custom-authentication-service/
+│── express/       # Contains the Express.js-based authentication service
+│── data/          # Stores user data for authentication
+│── README.md      # Documentation for the root repository
+│── .gitignore     # Git ignore file
+```
+
+## 🚀 Authentication Service
+
+The core implementation of the authentication service is located inside the [`express/`](express/) folder.
+
+### 🔹 Features
+
+- PIN-based authentication mechanism
+- Session persistence using an **in-memory map**
+- Supports **federated**, **internal**, and **second-factor** authentication
+- Secure handling of authentication requests
+- Compatible with **Vercel** and **local environments**
+
+### 📖 Setup & Usage
+
+To set up and run the service locally, follow the **detailed instructions** provided in the [`express/README.md`](express/README.md) file.
+
+## 🤝 Contributing
+
+We welcome contributions! Feel free to fork this repository and submit pull requests.
+
+---
+
+For full documentation, visit [`express/README.md`](express/README.md). 🚀
+
