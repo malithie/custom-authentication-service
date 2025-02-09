@@ -9,7 +9,6 @@ This is a Node.js Express-based authentication service that provides a PIN-based
 - PIN-based authentication mechanism
 - Session persistence using an **in-memory map**
 - Supports **federated**, **internal**, and **second-factor** authentication
-- Secure handling of authentication requests
 - Compatible with **Vercel** and **local environments**
 
 ## Prerequisites
